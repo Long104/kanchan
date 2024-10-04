@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",   // Use ESM
+    "target": "ESNext",   // Set target to ESNext for top-level await support
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
