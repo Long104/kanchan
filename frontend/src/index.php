@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+<!--     <meta charset="UTF-8"> -->
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!--     <title>Dashboard</title> -->
+<!-- </head> -->
+<!-- <body> -->
+<!--     <h2>Welcome, <?php echo $_SESSION['username']; ?></h2> -->
+<!--     <a href="logout.php">Logout</a> -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -37,26 +61,9 @@
             KanchanK
           </span>
         </a>
-        <div class="" id="">
 
-          <div class="custom_menu-btn">
-            <button onclick="openNav()">
-              <span class="s-1"> </span>
-              <span class="s-2"> </span>
-              <span class="s-3"> </span>
-            </button>
-            <div id="myNav" class="overlay">
-              <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
-                <a href="blog.html">Blog</a>
-                <a href="signup.html">Sign up</a>
-              </div>
-            </div>
-          </div>
+        <?php include "./component/menu.php" ?>
 
-        </div>
       </nav>
     </div>
   </header>

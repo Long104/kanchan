@@ -37,61 +37,177 @@
             KanchanK
           </span>
         </a>
-        <div class="" id="">
-
-          <div class="custom_menu-btn">
-            <button onclick="openNav()">
-              <span class="s-1"> </span>
-              <span class="s-2"> </span>
-              <span class="s-3"> </span>
-            </button>
-            <div id="myNav" class="overlay">
-              <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
-                <a href="blog.html">Blog</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <?php include './component/nav.php'; ?>
       </nav>
     </div>
   </header>
   <!-- end header section -->
 
-  <!-- about section -->
+  <!-- blog section -->
 
-  <section class="about_section  layout_padding">
+  <section class="blog_section ">
     <div class="container">
+      <br>
+      <br>
+      <br>
+      <div class="heading_container">
+        <h2>
+          Our Blog Page
+        </h2>
+      </div>
       <div class="row">
         <div class="col-md-6">
-          <div class="img-box">
-            <img src="pictures/2.jpg" alt="">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Labeeba.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Labeeba, a stunning bride
+              </h5>
+              <p>
+                The Quintessential Bride exudes perfection in every detail, from her flawless gown to the meticulously arranged decorations. Her wedding day is a true masterpiece of elegance and beauty.
+                <br>
+                <br>
+            </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                About Us
-              </h2>
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Amie.jpeg" alt="">
             </div>
-            <p>
-              We are a passionate team of makeup artists dedicated to providing top-notch makeup services. With years of experience in the industry, we strive to create stunning looks that enhance natural beauty.
-              <br> Our goal is to empower individuals to feel confident and express their unique style through the art of makeup.
-            </p>
-            <a href="https://www.instagram.com/direct/t/17842970165104419">
-              Book Now
-            </a>
+            <div class="detail-box">
+              <h5>
+                Graceful & Stunning Anmmie
+              </h5>
+              <p>
+                Anmmie, the embodiment of grace and beauty, captivates all with her stunning presence. Every step she takes radiates elegance, leaving a lasting impression on all who have the privilege of witnessing her.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Palkin.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                 Stunning Palkin 
+              </h5>
+              <p>
+                Ethereal and ethnic, with a touch of royalties, the enchanting beauty of this individual transcends time and culture. Adorned in regal attire and exuding an aura of grace, their presence is a testament to the rich heritage and timeless elegance that they embody.
+                 </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Radhika.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Graceful Radhika
+              </h5>
+              <p>
+               Radiating beauty and elegance, Radhika captivates all with her enchanting presence, her wedding day a celebration of love and grace.
+              </p>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Sonia.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Sonia
+              </h5>
+              <p>
+                A beacon of love and strength, Mumma's warmth envelops all who come near, her presence a comforting embrace that fills the hearts of those around her.
+              </p>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Ruby.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Ruby
+              </h5>
+              <p>
+                With a spirit that shines bright like a precious gem, Ruby captivates with her vibrant energy and infectious laughter, bringing joy and color to every moment she graces.
+                            </p>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Debo.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Graceful & Stunning Debo
+              </h5>
+              <p>
+                Debo's magnetic charm and charismatic presence illuminate every room he enters, captivating all with his engaging personality and infectious laughter. His genuine warmth and ability to make everyone feel at ease make him a cherished friend and a true joy to be around.
+              </p>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Bridesmaid.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+              Bridesmaid
+              </h5>
+              <p>
+                An utterly gorgeous bridesmaid from Canada, she radiates beauty and charm with every step she takes. Her elegant presence adds a touch of sophistication and grace to the wedding party, captivating all with her stunning appearance and warm personality.              </p>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Singapore.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                From Singapore
+              </h5>
+              <p>
+                A true stunner for the fashion show at Masala, she commands the runway with her poise and confidence. Her impeccable style and striking presence captivate the audience, leaving them in awe of her beauty and the way she effortlessly brings each ensemble to life.              </p>
+            </div>
+          </div>
+        </div><div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="pictures/Saranya.jpeg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Saranya
+              </h5>
+              <p>
+                Beautiful inside and out, Saranya from Singapore possesses a radiant spirit that shines through in every interaction. Her kind heart and genuine compassion for others make her a cherished friend and a source of inspiration. With her captivating smile and graceful demeanor, she effortlessly spreads joy and leaves a lasting impression on all fortunate enough to know her.
+                            </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <br>
+  <br>
 
-  <!-- end about section -->
+  <!-- end blog section -->
 
   <!-- info section -->
   <section class="info_section layout_padding2">

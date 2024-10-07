@@ -37,82 +37,37 @@
             KanchanK
           </span>
         </a>
-        <div class="" id="">
 
-          <div class="custom_menu-btn">
-            <button onclick="openNav()">
-              <span class="s-1"> </span>
-              <span class="s-2"> </span>
-              <span class="s-3"> </span>
-            </button>
-            <div id="myNav" class="overlay">
-              <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
-                <a href="blog.html">Blog</a>
-              </div>
-            </div>
-          </div>
+        <?php include "./component/menu.php" ?>
 
-        </div>
       </nav>
     </div>
   </header>
   <!-- end header section -->
 
-  <!-- shop section -->
+  <!-- about section -->
 
-  <section class="shop_section layout_padding">
+  <section class="about_section  layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          All Products
-        </h2>
-      </div>
       <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="products/B.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Magnetic <br>
-                  Eyelashes
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    <br>
-                    ฿590
-                  </span>
-                </h6>
-              </div>
-            </a>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="pictures/2.jpg" alt="">
           </div>
         </div>
-        
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="products/A.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Beauty <br>
-                  Blenders
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    <br>
-                    ฿590
-                  </span>
-                </h6>
-              </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              We are a passionate team of makeup artists dedicated to providing top-notch makeup services. With years of experience in the industry, we strive to create stunning looks that enhance natural beauty.
+              <br> Our goal is to empower individuals to feel confident and express their unique style through the art of makeup.
+            </p>
+            <a href="https://www.instagram.com/direct/t/17842970165104419">
+              Book Now
             </a>
           </div>
         </div>
@@ -120,7 +75,7 @@
     </div>
   </section>
 
-  <!-- end shop section -->
+  <!-- end about section -->
 
   <!-- info section -->
   <section class="info_section layout_padding2">
@@ -336,6 +291,7 @@
     </div>
   </footer>
   <!-- footer section -->
+
 
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>

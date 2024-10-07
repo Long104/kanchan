@@ -1,0 +1,2 @@
+pnpm drizzle-kit generate 
+pnpm tsx src/migrate.ts

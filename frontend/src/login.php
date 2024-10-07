@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+// Database connection
+$server = "db";  
+$user = "myuser";
+$password = "mypassword";
+$database = "mydatabase";
+
+$connection = new mysqli($server, $user, $password, $database);
+
+if (!$connection) {
+    die("Connection failed: " . $connection->connect_error);
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $user['username'];
+            // header("Location: dashboard.php");
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "Invalid username or password.";
+        }
+    } else {
+        $error = "No user found with that username.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -26,11 +70,12 @@
   <section class="signup_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>Sign Up</h2>
+        <h2>Login</h2>
+     <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
       </div>
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <form action="signup_process.php" method="post">
+          <form action=" " method="post">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" id="username" name="username" required>
@@ -43,16 +88,21 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <a href="signup.php" class ="block pb-3 text-sky-500">
+             Sign Up
+            </a>
+            <button type="submit" class="btn btn-primary">Login</button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
+ <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/custom.js"></script>
 </body>
 
 </html>
+
