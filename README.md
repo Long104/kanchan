@@ -1,8 +1,8 @@
-#Welcome to Glamour Shop! ✨
+# Welcome to Glamour Shop! ✨
 Overview
 Glamour Shop is your go-to online shopping destination for girls and women, specializing in high-quality cosmetics. Our platform is designed with a user-friendly interface, making it easy for you to explore, discover, and purchase your favorite beauty products from the comfort of your home.
 
-Why Choose Glamour Shop?
+## Why Choose Glamour Shop?
 1. Curated Selection of Products
 At Glamour Shop, we believe that every girl and woman deserves to feel beautiful. That’s why we offer a curated selection of top-notch cosmetics from renowned brands. Our products range from skincare essentials to vibrant makeup, ensuring you find exactly what you need.
 
@@ -21,7 +21,7 @@ Who doesn’t love a good deal? Glamour Shop regularly offers exclusive discount
 6. Community and Empowerment
 Glamour Shop is more than just a store; it’s a community. We celebrate beauty in all its forms and encourage our customers to share their beauty stories and tips through our blog and social media platforms.
 
-Features
+## Features
 Wide Range of Products: From foundations and lipsticks to skincare and tools.
 User Reviews: Check out reviews from other customers to help make informed decisions.
 Secure Payments: Shop with peace of mind, knowing that your transactions are secure.
@@ -44,4 +44,4 @@ Email: support@glamourshop.com
 Phone: 1-800-123-4567
 Thank you for choosing Glamour Shop for your beauty needs! We’re excited to help you express your unique beauty every day. Happy shopping! 💄
 
-Feel free to modify any sections to better suit your brand's voice or specific offerings! kanchan
+### Feel free to modify any sections to better suit your brand's voice or specific offerings! kanchan
