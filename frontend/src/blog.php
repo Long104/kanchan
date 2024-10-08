@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -37,7 +40,7 @@
             KanchanK
           </span>
         </a>
-        <?php include './component/nav.php'; ?>
+        <?php include './component/menu.php'; ?>
       </nav>
     </div>
   </header>

@@ -1,3 +1,40 @@
+<?php
+if (isset($_POST['submit'])) {
+    $server = "db";  
+    $user = "myuser";       
+    $password = "mypassword";  
+    $database = "mydatabase";    
+
+    $connection = new mysqli($server, $user, $password, $database);
+
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+
+    $username = $_POST['username'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
+
+    $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+
+    $stmt = $connection->prepare($sql);
+
+    $stmt->bind_param("ss", $username, $password);  
+
+    if ($stmt->execute()) {
+        echo "New record inserted successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $connection->close();
+}
+?>
+
+
+
+
+
 <!doctype html>
 <html>
   <head>
@@ -69,6 +106,7 @@
                   </h6>
                 </div>
               </a>
+              <button type="submit" name="submit" style="width:100%;margin-left:auto; margin-right:auto;"> buy</button>
             </div>
           </div>
 
@@ -92,6 +130,7 @@
                   </h6>
                 </div>
               </a>
+              <button type="submit" name="submit" style="width:100%;margin-left:auto; margin-right:auto;"> buy</button>
             </div>
           </div>
         </div>
@@ -273,17 +312,17 @@
           </div>
         </div>
         <div class="row info_main_row">
-          <div class="col-md-6 col-lg-3">
-            <div class="info_links">
-              <h4>Menu</h4>
-              <div class="info_links_menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
-                <a href="blog.html">Blog</a>
-              </div>
-            </div>
-          </div>
+          <!-- <div class="col-md-6 col-lg-3"> -->
+            <!-- <div class="info_links"> -->
+              <!-- <h4>Menu</h4> -->
+              <!-- <div class="info_links_menu"> -->
+              <!--   <a href="index.html">Home</a> -->
+              <!--   <a href="about.html">About</a> -->
+              <!--   <a href="shop.html">Shop</a> -->
+              <!--   <a href="blog.html">Blog</a> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
           <div class="col-md-6 col-lg-3">
             <div class="info_insta">
               <h4>QR Code</h4>

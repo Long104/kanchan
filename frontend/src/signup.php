@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 
 // Database connection
 $server = "db";  
@@ -45,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($stmt->execute()) {
                 $_SESSION['username'] = $username;
-                header("Location: dashboard.php");
+                 // setcookie("USER", $username, time() + 3600, "/"); 
+                header("Location: ./index.php");
                 exit();
             } else {
                 $error = "Registration failed. Please try again.";
@@ -78,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a class="navbar-brand" href="index.html">
           <span>KanchanK</span>
         </a>
+<?php include './component/menu.php'; ?>
       </nav>
     </div>
   </header>
@@ -86,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
       <div class="heading_container heading_center">
         <h2>Sign Up</h2>
+     <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
       </div>
       <div class="row">
         <div class="col-md-6 offset-md-3">

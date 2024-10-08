@@ -45,7 +45,7 @@ $result = $connection->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php while ($purchase = $result->fetch_assoc()) : ?>
+                <!-- <?php while ($purchase = $result->fetch_assoc()) : ?> -->
                     <tr>
                         <td><?php echo $purchase['id']; ?></td>
                         <td><?php echo $purchase['username']; ?></td>

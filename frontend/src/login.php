@@ -7,6 +7,9 @@ $user = "myuser";
 $password = "mypassword";
 $database = "mydatabase";
 
+
+
+
 $connection = new mysqli($server, $user, $password, $database);
 
 if (!$connection) {
@@ -55,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
+
 
 <body>
   <header class="header_section innerpage_header">

@@ -1,5 +1,9 @@
 <?php
 session_start();
+ if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 
 // Database connection
 $server = "db";  
@@ -37,11 +41,32 @@ $result = $connection->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
+
+  <header class="header_section innerpage_header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <span>KanchanK</span>
+        </a>
+<?php include './component/menu.php'; ?>
+      </nav>
+    </div>
+  </header>
+
     <div class="container mt-5">
-        <h2>Your Profile</h2>
+        <h2><?php echo $_SESSION['username'] ?></h2>
         <h3>Available Products</h3>
         <div class="row">
             <?php while ($product = $result->fetch_assoc()) : ?>
@@ -62,5 +87,12 @@ $result = $connection->query($sql);
         </div>
     </div>
 </body>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
 
 </html>
