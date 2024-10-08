@@ -46,9 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("sss", $username, $hashed_password, $email);
 
             if ($stmt->execute()) {
-                $_SESSION['username'] = $username;
+                // $_SESSION['username'] = $username;
                  // setcookie("USER", $username, time() + 3600, "/"); 
-                header("Location: ./index.php");
+                // header("Location: ./index.php");
+                header("Location: ./login.php");
                 exit();
             } else {
                 $error = "Registration failed. Please try again.";
@@ -78,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <span>KanchanK</span>
         </a>
 <?php include './component/menu.php'; ?>

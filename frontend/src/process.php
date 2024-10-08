@@ -34,7 +34,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <span>
             KanchanK
           </span>

@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
+            $_SESSION['user_id'] = $user['id'];
             // header("Location: dashboard.php");
             header("Location: index.php");
             exit();
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <span>KanchanK</span>
         </a>
       </nav>

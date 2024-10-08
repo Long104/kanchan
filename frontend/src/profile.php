@@ -18,18 +18,27 @@ if ($connection->connect_error) {
 }
 
 // Handle purchase
-if (isset($_POST['buy'])) {
+//
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['buy'])) {
+// if (isset($_POST['buy'])) {
     $userId = $_SESSION['user_id']; // Assuming you store user ID in session
     $productId = $_POST['product_id'];
 
     $stmt = $connection->prepare("INSERT INTO purchases (user_id, product_id) VALUES (?, ?)");
     $stmt->bind_param("ii", $userId, $productId);
-    $stmt->execute();
+
+    if ($stmt->execute()) {
+      header("Location: " . $_SERVER['PHP_SELF']);
+        echo "New record inserted successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
     $stmt->close();
+// }
 }
 
 // Fetch products
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM user_cart";
 $result = $connection->query($sql);
 ?>
 
@@ -57,7 +66,7 @@ $result = $connection->query($sql);
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <span>KanchanK</span>
         </a>
 <?php include './component/menu.php'; ?>
@@ -67,18 +76,37 @@ $result = $connection->query($sql);
 
     <div class="container mt-5">
         <h2><?php echo $_SESSION['username'] ?></h2>
-        <h3>Available Products</h3>
+        <h3>product in your cart</h3>
         <div class="row">
-            <?php while ($product = $result->fetch_assoc()) : ?>
+            <?php while ($user_cart = $result->fetch_assoc()) : ?>
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
+                        <img src="<?php echo $user_cart['image']; ?>" class="card-img-top" alt="<?php echo $user_cart['name']; ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $product['name']; ?></h5>
-                            <p class="card-text">$<?php echo $product['price']; ?></p>
-                            <form method="post">
-                                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                            <h5 class="card-title"><?php echo $user_cart['name']; ?></h5>
+                            <p class="card-text">$<?php echo $user_cart['price']; ?></p>
+                            <form method="post" action="">
+                                <input type="hidden" name="product_id" value="<?php echo $user_cart['id']; ?>">
                                 <button type="submit" name="buy" class="btn btn-primary">Buy</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+
+    <div class="container mt-5">
+        <h3>purchases history</h3>
+        <div class="row">
+            <?php while ($user_cart = $result->fetch_assoc()) : ?>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="<?php echo $user_cart['image']; ?>" class="card-img-top" alt="<?php echo $user_cart['name']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $user_cart['name']; ?></h5>
+                            <p class="card-text">$<?php echo $user_cart['price']; ?></p>
+                            <form method="post" action="">
+                                <input type="hidden" name="product_id" value="<?php echo $user_cart['id']; ?>">
                             </form>
                         </div>
                     </div>

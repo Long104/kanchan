@@ -1,3 +1,11 @@
+CREATE TABLE `user_cart` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`name` varchar(256) NOT NULL,
+	`price` decimal(10,2) NOT NULL,
+	`image` varchar(256) NOT NULL,
+	CONSTRAINT `user_cart_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
 CREATE TABLE `products` (
 	`id` int AUTO_INCREMENT NOT NULL,
 	`name` varchar(256) NOT NULL,
@@ -10,9 +18,6 @@ CREATE TABLE `purchases` (
 	`id` int AUTO_INCREMENT NOT NULL,
 	`user_id` int NOT NULL,
 	`product_id` int NOT NULL,
-	`name` varchar(256) NOT NULL,
-	`price` decimal(10,2) NOT NULL,
-	`image` varchar(256) NOT NULL,
 	`timestamp` timestamp DEFAULT (now()),
 	CONSTRAINT `purchases_id` PRIMARY KEY(`id`)
 );
@@ -22,7 +27,7 @@ CREATE TABLE `users` (
 	`username` varchar(256),
 	`email` varchar(256),
 	`password` varchar(256),
-	`datetime` datetime,
+	`timestamp` timestamp DEFAULT (now()),
 	CONSTRAINT `users_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint

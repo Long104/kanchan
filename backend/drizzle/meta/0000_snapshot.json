@@ -1,9 +1,53 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "6219b7b7-1d17-4a68-8404-2773547b760a",
+  "id": "e2f3cc85-1ad9-4f19-85df-acb3485fbf81",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
+    "user_cart": {
+      "name": "user_cart",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "price": {
+          "name": "price",
+          "type": "decimal(10,2)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "image": {
+          "name": "image",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "user_cart_id": {
+          "name": "user_cart_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
     "products": {
       "name": "products",
       "columns": {
@@ -68,27 +112,6 @@
         "product_id": {
           "name": "product_id",
           "type": "int",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "name": {
-          "name": "name",
-          "type": "varchar(256)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "price": {
-          "name": "price",
-          "type": "decimal(10,2)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "image": {
-          "name": "image",
-          "type": "varchar(256)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -172,12 +195,13 @@
           "notNull": false,
           "autoincrement": false
         },
-        "datetime": {
-          "name": "datetime",
-          "type": "datetime",
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": "(now())"
         }
       },
       "indexes": {},

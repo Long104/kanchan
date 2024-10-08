@@ -1,34 +1,49 @@
 <?php
-if (isset($_POST['submit'])) {
+session_start();
+if (empty($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32)); // Generate a random token
+}
+
     $server = "db";  
     $user = "myuser";       
     $password = "mypassword";  
     $database = "mydatabase";    
 
     $connection = new mysqli($server, $user, $password, $database);
-
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
 
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
+    $sql = "SELECT * FROM products ";
+    $products = $connection->query($sql);
+    // $fetchProducts = $connection->query($sql);
 
-    $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
+     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+        die("Invalid CSRF token");
+    }
+ // $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $image = $_POST['image'];
 
+
+    $sql = "INSERT INTO user_cart (id,name,price,image ) VALUES (?, ?,?,?)";
     $stmt = $connection->prepare($sql);
-
-    $stmt->bind_param("ss", $username, $password);  
+    $stmt->bind_param("isds", $id, $name, $price, $image);  
 
     if ($stmt->execute()) {
+      header("Location: " . $_SERVER['PHP_SELF']);
         echo "New record inserted successfully!";
     } else {
         echo "Error: " . $stmt->error;
     }
 
     $stmt->close();
-    $connection->close();
+    
 }
+
+    $connection->close();
 ?>
 
 
@@ -69,7 +84,7 @@ if (isset($_POST['submit'])) {
     <header class="header_section innerpage_header">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span> KanchanK </span>
           </a>
         <?php include "./component/menu.php" ?>
@@ -86,53 +101,42 @@ if (isset($_POST['submit'])) {
           <h2>All Products</h2>
         </div>
         <div class="row">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box">
-              <a href="">
-                <div class="img-box">
-                  <img src="products/B.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h6>
-                    Magnetic <br />
-                    Eyelashes
-                  </h6>
-                  <h6>
-                    Price
-                    <span>
-                      <br />
-                      ฿590
-                    </span>
-                  </h6>
-                </div>
-              </a>
-              <button type="submit" name="submit" style="width:100%;margin-left:auto; margin-right:auto;"> buy</button>
-            </div>
-          </div>
 
+            <?php while ($product = $products->fetch_assoc()) : ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="box">
+            <form method="post" action=" ">
               <a href="">
                 <div class="img-box">
-                  <img src="products/A.png" alt="" />
+                  <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" />
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Beauty <br />
-                    Blenders
+                    <?php echo $product['name']; ?>
                   </h6>
                   <h6>
                     Price
                     <span>
                       <br />
-                      ฿590
+                            <?php echo $product['price']; ?>
                     </span>
                   </h6>
                 </div>
               </a>
-              <button type="submit" name="submit" style="width:100%;margin-left:auto; margin-right:auto;"> buy</button>
+<!-- test -->
+                          <!-- <input type="hidden" name="id" value="<?php echo $product['id']; ?>"> -->
+                            <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
+                            <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                            <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
+                          <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+<!-- test -->
+              <!-- <button type="submit" name="<?php  echo $product['name'] ?>" style="width:100%;margin-left:auto; margin-right:auto;"> buy</button> -->
+              <button type="submit" name="add_to_cart" style="width:100%;margin-left:auto; margin-right:auto;"> add to cart</button>
+</form>
             </div>
           </div>
+            <?php endwhile; ?>
+
         </div>
       </div>
     </section>
