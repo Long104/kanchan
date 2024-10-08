@@ -39,7 +39,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['buy'])) {
 
 // Fetch products
 $sql = "SELECT * FROM user_cart";
+
 $result = $connection->query($sql);
+// $sql_purchase = "SELECT * FROM purchases";
+// $purchases = $connection->query($sql_purchase);
+$sql_purchase = "
+SELECT 
+    purchases.id AS purchase_id,
+    purchases.user_id,
+    products.id AS product_id,
+    products.name AS product_name,
+    products.price AS product_price,
+    products.image AS product_image,
+FROM 
+    purchases
+INNER JOIN 
+    products ON purchases.product_id = products.id
+WHERE 
+    purchases.user_id = ?
+";
+
+$stmt = $connection->prepare($sql_purchase);
+if ($stmt === false) {
+    die("MySQL prepare statement failed: " . $connection->error);
+}
+$stmt->bind_param("i", $_SESSION['user_id']); // Bind the user's ID
+$stmt->execute();
+$purchases = $stmt->get_result();
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -96,26 +124,27 @@ $result = $connection->query($sql);
         </div>
 
     <div class="container mt-5">
-        <h3>purchases history</h3>
-        <div class="row">
-            <?php while ($user_cart = $result->fetch_assoc()) : ?>
+        <h3 >purchases history</h3>
+        <div class="flex flex-wrap flex-row justify-center">
+            <?php while ($purchase = $purchases->fetch_assoc()) : ?>
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="<?php echo $user_cart['image']; ?>" class="card-img-top" alt="<?php echo $user_cart['name']; ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $user_cart['name']; ?></h5>
-                            <p class="card-text">$<?php echo $user_cart['price']; ?></p>
-                            <form method="post" action="">
-                                <input type="hidden" name="product_id" value="<?php echo $user_cart['id']; ?>">
-                            </form>
+                        <!-- <img src="<?php echo $purchase['image']; ?>" class="card-img-top" alt="<?php echo $purchase['name']; ?>"> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title"><?php echo $purchase['name']; ?></h5> -->
+                            <h5 class="card-title"><?php echo $purchase['id']; ?></h5>
+                            <!-- <p class="card-text">$<?php echo $purchase['price']; ?></p> -->
+                            <!-- <form method="post" action=""> -->
+                                <!-- <input type="hidden" name="product_id" value="<?php echo $purchase['id']; ?>"> -->
+                            <!-- </form> -->
                         </div>
                     </div>
-                </div>
             <?php endwhile; ?>
+                </div>
         </div>
     </div>
 </body>
-
+ <script src="https://cdn.tailwindcss.com"></script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
