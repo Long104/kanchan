@@ -3,6 +3,7 @@ CREATE TABLE `user_cart` (
 	`name` varchar(256) NOT NULL,
 	`price` decimal(10,2) NOT NULL,
 	`image` varchar(256) NOT NULL,
+	`product_id` int NOT NULL,
 	CONSTRAINT `user_cart_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
@@ -31,5 +32,6 @@ CREATE TABLE `users` (
 	CONSTRAINT `users_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
+ALTER TABLE `user_cart` ADD CONSTRAINT `user_cart_product_id_products_id_fk` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE `purchases` ADD CONSTRAINT `purchases_user_id_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE `purchases` ADD CONSTRAINT `purchases_product_id_products_id_fk` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE cascade ON UPDATE no action;

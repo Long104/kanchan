@@ -22,17 +22,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
      if (!hash_equals($_SESSION['token'], $_POST['token'])) {
         die("Invalid CSRF token");
     }
- // $id = $_POST['id'];
+    $productId = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
     $image = $_POST['image'];
 
 
-    $sql = "INSERT INTO user_cart (id,name,price,image ) VALUES (?, ?,?,?)";
+    $sql = "INSERT INTO user_cart (product_id,name,price,image ) VALUES (?, ?,?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("isds", $id, $name, $price, $image);  
+    $stmt->bind_param("isds", $productId, $name, $price, $image);  
 
     if ($stmt->execute()) {
+    $cart = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
+
+ if (isset($cart[$productId])) {
+        // If the product already exists, increase the quantity
+        $cart[$productId]++;
+    } else {
+        // Otherwise, add it to the cart with quantity 1
+        $cart[$productId] = 1;
+    }
+
+    $cart[] = $productId; 
+    setcookie('cart', json_encode($cart), time() + (30 * 24 * 60 * 60), "/"); // path set to / for the whole site
       header("Location: " . $_SERVER['PHP_SELF']);
         echo "New record inserted successfully!";
     } else {
@@ -124,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
                 </div>
               </a>
 <!-- test -->
-                          <!-- <input type="hidden" name="id" value="<?php echo $product['id']; ?>"> -->
+                          <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                             <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
                             <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
                             <input type="hidden" name="image" value="<?php echo $product['image']; ?>">

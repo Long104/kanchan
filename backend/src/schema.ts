@@ -30,6 +30,9 @@ export const UserCart = mysqlTable("user_cart", {
   name: varchar("name", { length: 256 }).notNull(),
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
   image: varchar("image", { length: 256 }).notNull(),
+  product_id: int("product_id", { mode: "number" })
+    .references(() => products.id, { onDelete: "cascade" })
+    .notNull(),
 });
 
 

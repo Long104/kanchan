@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "e2f3cc85-1ad9-4f19-85df-acb3485fbf81",
+  "id": "a0675840-6413-42b9-bf26-35d7dcbf5192",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "user_cart": {
@@ -34,10 +34,31 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "product_id": {
+          "name": "product_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "user_cart_product_id_products_id_fk": {
+          "name": "user_cart_product_id_products_id_fk",
+          "tableFrom": "user_cart",
+          "tableTo": "products",
+          "columnsFrom": [
+            "product_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {
         "user_cart_id": {
           "name": "user_cart_id",

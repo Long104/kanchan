@@ -6,7 +6,8 @@
   },
   "scripts": {
     "dg": "npx drizzle-kit generate",
-    "dm": "npx tsx src/migrate.ts"
+    "dm": "npx tsx src/migrate.ts",
+    "insert": "npx tsx src/index.ts"
   },
   "type": "module",
   "devDependencies": {
