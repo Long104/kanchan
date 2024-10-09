@@ -1,13 +1,13 @@
-# Welcome to Glamour Shop! ✨
+# yarnWelcome to KanchanK  Shop! ✨
 Overview
-Glamour Shop is your go-to online shopping destination for girls and women, specializing in high-quality cosmetics. Our platform is designed with a user-friendly interface, making it easy for you to explore, discover, and purchase your favorite beauty products from the comfort of your home.
+KanchanK Shop is your go-to online shopping destination for girls and women, specializing in high-quality cosmetics. Our platform is designed with a user-friendly interface, making it easy for you to explore, discover, and purchase your favorite beauty products from the comfort of your home.
 
-## Why Choose Glamour Shop?
+## Why Choose KanchanK Shop?
 1. Curated Selection of Products
-At Glamour Shop, we believe that every girl and woman deserves to feel beautiful. That’s why we offer a curated selection of top-notch cosmetics from renowned brands. Our products range from skincare essentials to vibrant makeup, ensuring you find exactly what you need.
+At KanchanK Shop, we believe that every girl and woman deserves to feel beautiful. That’s why we offer a curated selection of top-notch cosmetics from renowned brands. Our products range from skincare essentials to vibrant makeup, ensuring you find exactly what you need.
 
 2. User-Friendly Interface
-Navigating the world of cosmetics can be overwhelming, but not at Glamour Shop! Our website features an intuitive design, making it easy to browse through categories, read product descriptions, and find the perfect items tailored to your beauty needs.
+Navigating the world of cosmetics can be overwhelming, but not at KanchanK Shop! Our website features an intuitive design, making it easy to browse through categories, read product descriptions, and find the perfect items tailored to your beauty needs.
 
 3. Quality Assurance
 We prioritize quality over everything else. All our products undergo rigorous testing to ensure they meet the highest standards. You can shop confidently, knowing that you are purchasing safe and effective cosmetics.
@@ -16,10 +16,10 @@ We prioritize quality over everything else. All our products undergo rigorous te
 Our dedicated customer service team is here to assist you every step of the way. Whether you have questions about a product or need help with your order, we’re just an email or chat away!
 
 5. Exclusive Discounts and Offers
-Who doesn’t love a good deal? Glamour Shop regularly offers exclusive discounts, promotions, and loyalty rewards to ensure you get the best value for your money.
+Who doesn’t love a good deal? KanchanK Shop regularly offers exclusive discounts, promotions, and loyalty rewards to ensure you get the best value for your money.
 
 6. Community and Empowerment
-Glamour Shop is more than just a store; it’s a community. We celebrate beauty in all its forms and encourage our customers to share their beauty stories and tips through our blog and social media platforms.
+KanchanK Shop is more than just a store; it’s a community. We celebrate beauty in all its forms and encourage our customers to share their beauty stories and tips through our blog and social media platforms.
 
 ## Features
 Wide Range of Products: From foundations and lipsticks to skincare and tools.
@@ -34,14 +34,14 @@ Checkout: Follow the easy checkout process, and don’t forget to apply any disc
 Connect With Us
 We love hearing from our customers! Follow us on social media to stay updated on new arrivals, beauty tips, and more:
 
-Instagram: @GlamourShop
-Facebook: GlamourShop
-Twitter: @GlamourShop
+Instagram: @KanchanKShop
+Facebook: KanchanKShop
+Twitter: @KanchanKShop
 Contact Us
 For inquiries or assistance, please reach out to our customer support team at:
 
-Email: support@glamourshop.com
+Email: support@KanchanKshop.com
 Phone: 1-800-123-4567
-Thank you for choosing Glamour Shop for your beauty needs! We’re excited to help you express your unique beauty every day. Happy shopping! 💄
+Thank you for choosing KanchanK Shop for your beauty needs! We’re excited to help you express your unique beauty every day. Happy shopping! 💄
 
 ### Feel free to modify any sections to better suit your brand's voice or specific offerings! kanchan
