@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "a0675840-6413-42b9-bf26-35d7dcbf5192",
+  "id": "da8ff66e-f1a2-445d-ae3c-7433758341b6",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "user_cart": {
