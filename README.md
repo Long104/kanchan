@@ -1,4 +1,4 @@
-# yarnWelcome to KanchanK  Shop! ✨
+# Welcome to KanchanK  Shop! ✨
 Overview
 KanchanK Shop is your go-to online shopping destination for girls and women, specializing in high-quality cosmetics. Our platform is designed with a user-friendly interface, making it easy for you to explore, discover, and purchase your favorite beauty products from the comfort of your home.
 
