@@ -19,9 +19,11 @@ npm install
 ```javascript
 npm run dg
 npm run dm
+npm run insert
 ```
 
 #### go to localhost:8000 to view the app
+
 
 
 
