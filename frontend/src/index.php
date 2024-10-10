@@ -103,7 +103,7 @@ session_start();
               We are a passionate team of makeup artists dedicated to providing top-notch makeup services. With years of experience in the industry, we strive to create stunning looks that enhance natural beauty.
               <br> Our goal is to empower individuals to feel confident and express their unique style through the art of makeup.
             </p>
-            <a href="about.html">
+            <a href="about.php">
               Read More
             </a>
           </div>

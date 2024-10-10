@@ -45,3 +45,12 @@ Phone: 1-800-123-4567
 Thank you for choosing KanchanK Shop for your beauty needs! We’re excited to help you express your unique beauty every day. Happy shopping! 💄
 
 ### Feel free to modify any sections to better suit your brand's voice or specific offerings! kanchan
+
+
+
+This will render in Markdown as:
+
+```javascript title="JavaScript"
+npm start
+
+
