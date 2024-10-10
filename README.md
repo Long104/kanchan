@@ -2,6 +2,30 @@
 Overview
 KanchanK Shop is your go-to online shopping destination for girls and women, specializing in high-quality cosmetics. Our platform is designed with a user-friendly interface, making it easy for you to explore, discover, and purchase your favorite beauty products from the comfort of your home.
 
+### Usage
+
+#### cd to frontend and run
+```docker-compose
+docker-compose up -d
+```
+
+
+#### cd to backend and run
+```javascript
+npm install
+```
+
+#### to create database run in backend
+```javascript
+npm run dg
+npm run dm
+```
+
+#### go to localhost:8000 to view the app
+
+
+
+
 ## Why Choose KanchanK Shop?
 1. Curated Selection of Products
 At KanchanK Shop, we believe that every girl and woman deserves to feel beautiful. That’s why we offer a curated selection of top-notch cosmetics from renowned brands. Our products range from skincare essentials to vibrant makeup, ensuring you find exactly what you need.
@@ -46,11 +70,5 @@ Thank you for choosing KanchanK Shop for your beauty needs! We’re excited to h
 
 ### Feel free to modify any sections to better suit your brand's voice or specific offerings! kanchan
 
-
-
-This will render in Markdown as:
-
-```javascript title="JavaScript"
-npm start
 
 
