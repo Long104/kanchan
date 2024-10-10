@@ -16,7 +16,7 @@ npm install
 ```
 
 #### to create database run in backend
-```javascript
+```javascript test
 npm run dg
 npm run dm
 npm run insert
