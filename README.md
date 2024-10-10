@@ -24,6 +24,12 @@ npm run insert
 
 #### go to localhost:8000 to view the app
 
+```javascript I'm A tab
+console.log('Code Tab A');
+```
+```javascript I'm tab B
+console.log('Code Tab B');
+```
 
 
 
